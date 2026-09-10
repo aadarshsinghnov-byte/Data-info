@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match History Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Login Section -->
+        <div id="loginSection" class="card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Please enter your credentials to access the portal.</p>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required placeholder="Enter username">
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter password">
+                </div>
+                
+                <button type="submit" class="btn">Log In</button>
+                <div id="errorMsg" class="error-msg"></div>
+            </form>
+        </div>
+
+        <!-- Dashboard Section (Hidden by Default) -->
+        <div id="dashboardSection" class="card hidden">
+            <div class="dashboard-header">
+                <div>
+                    <h2>Match Portal</h2>
+                    <p class="subtitle" style="margin-bottom: 0;">Select an action below</p>
+                </div>
+                <button class="logout-btn" onclick="handleLogout()">Logout</button>
+            </div>
+
+            <div class="options-grid">
+                <!-- Replace 'YOUR_GOOGLE_FORM_LINK_HERE' with your actual link -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe-eNtr1GjBUMvAvJUGh27wANqib5hVowLKWgtMMqCfPEGR_w/viewform?usp=publish-editor" target="_blank" class="option-card">
+                    <div class="option-info">
+                        <h3>Add Match History</h3>
+                        <p>Submit a new match entry via form</p>
+                    </div>
+                    <div class="option-icon">➕</div>
+                </a>
+
+                <!-- Replace 'YOUR_GOOGLE_SHEET_LINK_HERE' with your actual link -->
+                <a href="https://docs.google.com/spreadsheets/d/1vUaTnts1lVfJB60GMbcsyq9cSxYeqzZhABYS5NMwqCE/edit?usp=sharing" target="_blank" class="option-card">
+                    <div class="option-info">
+                        <h3>All Match History</h3>
+                        <p>View all records in spreadsheet</p>
+                    </div>
+                    <div class="option-icon">📊</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
